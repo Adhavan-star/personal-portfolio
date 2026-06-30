@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Adhavan Thavakumar</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --text: #1f2937;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --bg-accent: #f3f4f6;
+            --accent: #2563eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: #f0f2f5;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .resume-page {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 48px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Top Action Buttons (For Screen Only) */
+        .actions-bar {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Resume Content Layout */
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+            margin-top: 24px;
+            margin-bottom: 14px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Items Styles */
+        .edu-item, .project-item, .exp-item {
+            margin-bottom: 16px;
+        }
+
+        .edu-item:last-child, .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 14.5px;
+            margin-bottom: 4px;
+        }
+
+        .item-sub {
+            display: flex;
+            justify-content: space-between;
+            color: var(--accent);
+            font-size: 13.5px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .item-desc {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .bullets-list {
+            margin-left: 18px;
+            margin-top: 6px;
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        .bullets-list li {
+            margin-bottom: 4px;
+        }
+
+        /* Skills Lists */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .skill-category {
+            font-size: 13.5px;
+            margin-bottom: 8px;
+        }
+
+        .skill-category strong {
+            color: var(--primary);
+        }
+
+        .currently-learning-box {
+            background-color: var(--bg-accent);
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* Print Media Styles (A4 Page Adjustments) */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+
+            .resume-page {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+                max-width: 100%;
+            }
+
+            .actions-bar {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--text);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .resume-page {
+                padding: 24px;
+            }
+            .header-top {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .contact-info {
+                text-align: left;
+            }
+            .grid-2, .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Actions Bar (Hidden in print) -->
+    <div class="actions-bar">
+        <a href="javascript:window.print()" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print / Save as PDF
+        </a>
+    </div>
+
+    <!-- Main Resume Page -->
+    <div class="resume-page">
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>Adhavan Thavakumar</h1>
+                    <div class="subtitle">Full Stack Developer &amp; AI Builder</div>
+                </div>
+                <div class="contact-info">
+                    <span>Thanjavur, Tamil Nadu, India</span>
+                    <span>+91 96552 53532</span>
+                    <a href="mailto:adhavanthavakumar@gmail.com">adhavanthavakumar@gmail.com</a>
+                    <a href="https://github.com/Adhavan-star" target="_blank">github.com/Adhavan-star</a>
+                    <a href="https://linkedin.com/in/adhavan-thavakumar-9b2439342" target="_blank">linkedin.com/in/adhavan-thavakumar-9b2439342</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Objective -->
+        <h3 class="section-title">Professional Summary</h3>
+        <p class="item-desc">
+            Computer Science Engineering student passionate about Full Stack Development, Artificial Intelligence (AI Agents), and Data Analytics. A proactive builder who values learning through direct implementation. Seeking a Software Engineering internship to apply technical capabilities in building modern, scalable software applications.
+        </p>
+
+        <!-- Education -->
+        <h3 class="section-title">Education</h3>
+        <div class="edu-item">
+            <div class="item-header">
+                <span>Dhanalakshmi Srinivasan Engineering College (Autonomous)</span>
+                <span>Graduation: 2028</span>
+            </div>
+            <div class="item-sub">
+                <span>Bachelor of Engineering (B.E.) in Computer Science and Engineering</span>
+                <span>CGPA: 8.4</span>
+            </div>
+        </div>
+
+        <!-- Technical Stack -->
+        <h3 class="section-title">Technical Stack</h3>
+        <div class="skills-grid">
+            <div>
+                <div class="skill-category">
+                    <strong>Languages:</strong> Python, Java, JavaScript, HTML5, CSS3
+                </div>
+                <div class="skill-category">
+                    <strong>Frontend:</strong> React, Next.js, Tailwind CSS
+                </div>
+                <div class="skill-category">
+                    <strong>Backend &amp; Databases:</strong> Node.js, Express, MySQL
+                </div>
+            </div>
+            <div>
+                <div class="skill-category">
+                    <strong>AI &amp; Data:</strong> Machine Learning, AI Agents, Power BI, Pandas, NumPy
+                </div>
+                <div class="skill-category">
+                    <strong>Tools:</strong> Git, GitHub, VS Code, Figma, Canva
+                </div>
+            </div>
+        </div>
+        <div class="currently-learning-box">
+            <strong>Currently learning:</strong> .NET, AI Agent Development Frameworks, Advanced React state management, and Cloud Infrastructure (AWS/Azure).
+        </div>
+
+        <!-- Projects -->
+        <h3 class="section-title">Projects</h3>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <span>Fingerprint Based Voting System</span>
+                <span>HTML, CSS, JS, SQL</span>
+            </div>
+            <div class="item-sub">
+                <span>Role: Team Leader</span>
+                <span>Academic Project</span>
+            </div>
+            <p class="item-desc">
+                Designed and built a biometric authentication-based student voting application. Structured secure checks to verify voter duplicates and authenticate transactions.
+            </p>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <span>AI Agent Workflows &amp; Assistants</span>
+                <span>Python, LangChain, APIs</span>
+            </div>
+            <div class="item-sub">
+                <span>Role: Independent Developer</span>
+                <span>Self-directed Practice</span>
+            </div>
+            <p class="item-desc">
+                Constructed automation scripts and reasoning agent configurations integrating language model APIs to execute workflow actions and answer tasks.
+            </p>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <span>Data Analytics Dashboard</span>
+                <span>Python, Pandas, Power BI</span>
+            </div>
+            <div class="item-sub">
+                <span>Role: Analyst</span>
+                <span>Practice Project</span>
+            </div>
+            <p class="item-desc">
+                Conducted data cleaning, validation, and analytics transformations on multi-column datasets. Built Power BI metrics tables to report actionable business results.
+            </p>
+        </div>
+
+        <!-- Timeline / Highlights -->
+        <h3 class="section-title">Timeline &amp; Achievements</h3>
+        <ul class="bullets-list">
+            <li><strong>2025:</strong> Coordinated project codebase assembly as Team Leader for Fingerprint Voting System.</li>
+            <li><strong>2025:</strong> Initiated comprehensive frontend web development courses.</li>
+            <li><strong>2026:</strong> Built multiple local web utilities and automated python scripts.</li>
+            <li>Consistently expanding knowledge into .NET, advanced React, and AI agent frameworks.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhavan Thavakumar | Full Stack Developer & AI Agent Builder</title>
+    <meta name="description" content="Portfolio of Adhavan Thavakumar, a Computer Science Engineering student, Full Stack Developer, AI Agent Builder, and Data Analytics enthusiast.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Interactive Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Custom Cursor Glow -->
+    <div id="cursor-glow"></div>
+
+    <!-- Navigation Header -->
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-accent">&lt;</span>Adhavan<span class="logo-accent"> /&gt;</span>
+            </a>
+            
+            <nav id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <!-- Moon Icon (Dark Mode active) -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    <!-- Sun Icon (Light Mode active) -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+                <button id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Welcome to my universe</span>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Adhavan Thavakumar</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        I am a <span id="typewriter-text" class="accent-text"></span><span class="typewriter-cursor">|</span>
+                    </h2>
+                    <p class="hero-tagline">
+                        Building intelligent software, modern web applications, and AI-powered solutions that solve real-world problems.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Contact Me</span>
+                        </a>
+                        <a href="assets/resume.html" target="_blank" class="btn btn-outline" id="resume-download-btn">
+                            <span>Download Resume</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Floating Tech Stack Dashboard -->
+                <div class="hero-visual">
+                    <div class="visual-card glass">
+                        <div class="card-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="console-body">
+                            <p class="console-line"><span class="c-blue">const</span> developer = {</p>
+                            <p class="console-line indent-1"><span class="c-green">name</span>: <span class="c-orange">'Adhavan Thavakumar'</span>,</p>
+                            <p class="console-line indent-1"><span class="c-green">role</span>: <span class="c-orange">'Full Stack & AI Builder'</span>,</p>
+                            <p class="console-line indent-1"><span class="c-green">college</span>: <span class="c-orange">'DSEC (Autonomous)'</span>,</p>
+                            <p class="console-line indent-1"><span class="c-green">passionateAbout</span>: [</p>
+                            <p class="console-line indent-2"><span class="c-orange">'AI Agents'</span>, <span class="c-orange">'Web Dev'</span>, <span class="c-orange">'Data Analytics'</span></p>
+                            <p class="console-line indent-1">],</p>
+                            <p class="console-line indent-1"><span class="c-green">currentStatus</span>: <span class="c-orange">'Seeking Internship'</span></p>
+                            <p class="console-line">};</p>
+                        </div>
+                    </div>
+                    <!-- Floating abstract elements -->
+                    <div class="floating-icon icon-1" title="Python">🐍</div>
+                    <div class="floating-icon icon-2" title="React">⚛️</div>
+                    <div class="floating-icon icon-3" title="AI Agent">🤖</div>
+                    <div class="floating-icon icon-4" title="Database">📊</div>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-down-indicator" aria-label="Scroll down to About section">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+            </a>
+        </section>
+
+        <!-- About & Education Section -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Discover</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-bio glass">
+                        <div class="avatar-wrapper">
+                            <img src="assets/avatar.png" alt="Adhavan Thavakumar Avatar" class="avatar-img">
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <h3 class="bio-title">Hello there!</h3>
+                        <p class="bio-text">
+                            I'm <strong>Adhavan Thavakumar</strong>, a Computer Science Engineering student at <strong>Dhanalakshmi Srinivasan Engineering College (Autonomous), Perambalur</strong>.
+                        </p>
+                        <p class="bio-text">
+                            I enjoy learning by building projects rather than only consuming tutorials. I'm passionate about Full Stack Development, Artificial Intelligence, AI Agents, Data Analytics, Automation, and Cloud Technologies.
+                        </p>
+                        <p class="bio-text">
+                            My current goal is to secure a <strong>Software Engineering internship</strong> where I can apply my skills, solve meaningful real-world problems, and continue growing as a developer.
+                        </p>
+                    </div>
+
+                    <div class="about-education-timeline">
+                        <div class="education-card glass">
+                            <div class="card-icon-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-text"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 18.8v-4L2 13v6a1 1 0 0 0 1 1h6v-2Z"/><path d="M21.4 10.9v6a1 1 0 0 1-1 1h-6v2h6a3 3 0 0 0 3-3v-6Z"/></svg>
+                                <h3>Education</h3>
+                            </div>
+                            <div class="education-content">
+                                <h4 class="edu-degree">Bachelor of Engineering (B.E.)</h4>
+                                <p class="edu-field">Computer Science and Engineering</p>
+                                <p class="edu-school">Dhanalakshmi Srinivasan Engineering College (Autonomous)</p>
+                                <div class="edu-meta">
+                                    <span class="edu-badge"><strong class="accent-text">Graduation:</strong> 2028</span>
+                                    <span class="edu-badge"><strong class="accent-text">CGPA:</strong> 8.4</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-container glass">
+                            <div class="card-icon-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-text"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <h3>Milestones Timeline</h3>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">Future</div>
+                                    <div class="timeline-content">Seeking Software Engineering Internship</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2026</div>
+                                    <div class="timeline-content">Learning React, .NET, Data Analytics & Exploring AI Agents</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2025</div>
+                                    <div class="timeline-content">Started Web Development & Built Fingerprint Voting System</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2024</div>
+                                    <div class="timeline-content">Started CSE Journey & Learned Python</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Dashboard Section -->
+        <section class="stats-section scroll-reveal">
+            <div class="container stats-grid">
+                <div class="stat-card glass">
+                    <div class="stat-num" data-val="10">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-num" data-val="15">0</div>
+                    <div class="stat-label">Technologies Mastered</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-num" data-val="500">0</div>
+                    <div class="stat-label">Learning Hours</div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-num-static">☕</div>
+                    <div class="stat-label">Coffee Fuelled</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Abilities</span>
+                    <h2 class="section-title">My Tech Stack</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skills-category glass">
+                        <div class="category-header">
+                            <span class="cat-icon">💻</span>
+                            <h3>Languages</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item" data-percent="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="75">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 / CSS3</span>
+                                    <span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category glass">
+                        <div class="category-header">
+                            <span class="cat-icon">🎨</span>
+                            <h3>Frontend & Design</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item" data-percent="75">
+                                <div class="skill-info">
+                                    <span class="skill-name">React</span>
+                                    <span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="70">
+                                <div class="skill-info">
+                                    <span class="skill-name">Next.js</span>
+                                    <span class="skill-pct">70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Tailwind CSS</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Figma / Canva</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category glass">
+                        <div class="category-header">
+                            <span class="cat-icon">⚙️</span>
+                            <h3>Backend & Database</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item" data-percent="70">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js / Express</span>
+                                    <span class="skill-pct">70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git & GitHub</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category glass">
+                        <div class="category-header">
+                            <span class="cat-icon">🤖</span>
+                            <h3>AI & Data Analytics</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item" data-percent="75">
+                                <div class="skill-info">
+                                    <span class="skill-name">Machine Learning</span>
+                                    <span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">AI Agents & Prompting</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="75">
+                                <div class="skill-info">
+                                    <span class="skill-name">Power BI</span>
+                                    <span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-percent="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Pandas / NumPy</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Currently Learning Panel -->
+                <div class="currently-learning glass">
+                    <div class="learning-title">
+                        <span class="pulse-dot"></span>
+                        <h4>Currently Expanding Knowledge In:</h4>
+                    </div>
+                    <div class="learning-tags">
+                        <span class="tag">.NET Development</span>
+                        <span class="tag">AI Agent Frameworks</span>
+                        <span class="tag">Advanced React & State Management</span>
+                        <span class="tag">Deep Data Analytics Pipelines</span>
+                        <span class="tag">Machine Learning Architectures</span>
+                        <span class="tag">Cloud Infrastructure (AWS/Azure)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section id="projects" class="projects-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <!-- Projects Controls (Search and Filters) -->
+                <div class="projects-controls glass">
+                    <div class="search-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="project-search" placeholder="Search projects by title, tech or tag...">
+                    </div>
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="web">Web Dev</button>
+                        <button class="filter-btn" data-filter="ai">AI / Agents</button>
+                        <button class="filter-btn" data-filter="data">Data Analytics</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project 1: Voting System -->
+                    <article class="project-card glass" data-categories="web">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project_voting.png" alt="Fingerprint Based Voting System Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <div class="overlay-links">
+                                    <a href="https://github.com/Adhavan-star" target="_blank" rel="noopener noreferrer" class="overlay-link" title="Code Repository">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    </a>
+                                    <a href="#" class="overlay-link" title="Live Project Demo">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-role">Team Leader</span>
+                                <span class="project-cat-badge">Web Dev</span>
+                            </div>
+                            <h3 class="project-title">Fingerprint Based Voting System</h3>
+                            <p class="project-description">
+                                A secure, authentication-based voting platform designed to streamline student elections. Incorporates biometric authorization and duplicate vote check-guards.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Personal Portfolio -->
+                    <article class="project-card glass" data-categories="web">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project_portfolio.png" alt="Personal Portfolio Website Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <div class="overlay-links">
+                                    <a href="https://github.com/Adhavan-star" target="_blank" rel="noopener noreferrer" class="overlay-link" title="Code Repository">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    </a>
+                                    <a href="#" class="overlay-link" title="Live Project Demo">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-role">Creator</span>
+                                <span class="project-cat-badge">Web Dev</span>
+                            </div>
+                            <h3 class="project-title">Personal Portfolio Website</h3>
+                            <p class="project-description">
+                                A high-end interactive portfolio featuring custom canvas particles, scroll triggers, custom layouts, and premium light/dark transitions. Optimized for high speed and mobile interfaces.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Canvas</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: AI Agents -->
+                    <article class="project-card glass" data-categories="ai">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project_ai.png" alt="AI Agent Projects Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <div class="overlay-links">
+                                    <a href="https://github.com/Adhavan-star" target="_blank" rel="noopener noreferrer" class="overlay-link" title="Code Repository">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-role">AI Developer</span>
+                                <span class="project-cat-badge">AI / Agents</span>
+                            </div>
+                            <h3 class="project-title">AI Agent Frameworks & Workflows</h3>
+                            <p class="project-description">
+                                A suite of conversational assistants and automated task solvers created using modern LLM prompt engineering, API integrations, and local reasoning tools.
+                            </p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>LangChain</span>
+                                <span>OpenAI API</span>
+                                <span>JSON</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Analytics Dashboard -->
+                    <article class="project-card glass" data-categories="data">
+                        <div class="project-img-wrapper">
+                            <img src="assets/project_analytics.png" alt="Data Analytics Dashboard Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <div class="overlay-links">
+                                    <a href="#" class="overlay-link" title="Power BI Mockup">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-role">Analyst</span>
+                                <span class="project-cat-badge">Data Analytics</span>
+                            </div>
+                            <h3 class="project-title">Data Analytics Dashboard</h3>
+                            <p class="project-description">
+                                Interactive dashboard analyzing user datasets. Features data cleaning, transformations, and metrics tracking using Python, Pandas, NumPy, and Power BI dashboards.
+                            </p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Power BI</span>
+                                <span>NumPy</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Certifications -->
+        <section id="experience" class="exp-certs-section scroll-reveal">
+            <div class="container exp-certs-grid">
+                <!-- Professional Interests / Experience -->
+                <div class="exp-panel glass">
+                    <div class="section-header align-left">
+                        <span class="section-badge">Opportunities</span>
+                        <h2 class="section-title">Career Interest</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="exp-text-block">
+                        <p class="exp-intro">
+                            I am actively seeking <strong>internship roles</strong> and entry-level career opportunities to bring my energy, problem-solving capabilities, and software knowledge to a professional development team.
+                        </p>
+                        <h4 class="exp-subheading">Areas of Focus:</h4>
+                        <ul class="exp-list">
+                            <li>
+                                <span class="bullet-glow"></span>
+                                <div><strong>Software Engineering & Full Stack Dev:</strong> Building responsive frontends and resilient backends (Node.js, Express, .NET).</div>
+                            </li>
+                            <li>
+                                <span class="bullet-glow"></span>
+                                <div><strong>AI Engineering & Agent Builder:</strong> Integrating language models, structuring smart workflows, and prompt engineering.</div>
+                            </li>
+                            <li>
+                                <span class="bullet-glow"></span>
+                                <div><strong>Data Analytics & Dashboards:</strong> Translating raw structural logs/data tables into visual metric boards (Pandas, Power BI).</div>
+                            </li>
+                            <li>
+                                <span class="bullet-glow"></span>
+                                <div><strong>Task Automation:</strong> Building scripts to eliminate repetitive operations and optimize team speeds.</div>
+                            </li>
+                        </ul>
+                        <div class="hiring-box">
+                            <span class="hiring-indicator"></span>
+                            <p>Currently open to global remote roles and on-site internships across India (including Chennai, Bengaluru, and Hyderabad).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Card Deck -->
+                <div class="certs-panel glass">
+                    <div class="section-header align-left">
+                        <span class="section-badge">Credentials</span>
+                        <h2 class="section-title">Certifications</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="certs-container">
+                        <!-- Certification Card 1 -->
+                        <div class="cert-card">
+                            <div class="cert-icon">🐍</div>
+                            <div class="cert-info">
+                                <h4 class="cert-name">Python Programming</h4>
+                                <p class="cert-issuer">Academic Certificate</p>
+                            </div>
+                        </div>
+
+                        <!-- Certification Card 2 -->
+                        <div class="cert-card">
+                            <div class="cert-icon">📊</div>
+                            <div class="cert-info">
+                                <h4 class="cert-name">Power BI Data Analyst</h4>
+                                <p class="cert-issuer">Data Analytics Specialization</p>
+                            </div>
+                        </div>
+
+                        <!-- Certification Card 3 -->
+                        <div class="cert-card">
+                            <div class="cert-icon">☕</div>
+                            <div class="cert-info">
+                                <h4 class="cert-name">Java Programming</h4>
+                                <p class="cert-issuer">Software Foundations</p>
+                            </div>
+                        </div>
+
+                        <!-- Certification Card 4 -->
+                        <div class="cert-card">
+                            <div class="cert-icon">🌐</div>
+                            <div class="cert-info">
+                                <h4 class="cert-name">Web Development</h4>
+                                <p class="cert-issuer">Frontend Foundations (HTML, CSS, JS)</p>
+                            </div>
+                        </div>
+
+                        <!-- Certification Card 5 -->
+                        <div class="cert-card">
+                            <div class="cert-icon">🤖</div>
+                            <div class="cert-info">
+                                <h4 class="cert-name">AI Fundamentals</h4>
+                                <p class="cert-issuer">Introduction to Machine Learning</p>
+                            </div>
+                        </div>
+
+                        <!-- Certification Card 6 -->
+                        <div class="cert-card">
+                            <div class="cert-icon">📈</div>
+                            <div class="cert-info">
+                                <h4 class="cert-name">Data Analytics</h4>
+                                <p class="cert-issuer">Pandas, NumPy, and Analytics Basics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Grid Section -->
+        <section class="achievements-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Successes</span>
+                    <h2 class="section-title">Key Achievements</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="achievements-grid">
+                    <div class="achievement-card glass">
+                        <div class="ach-icon">🏗️</div>
+                        <h3>Multiple Web Apps Built</h3>
+                        <p>Designed and built various student and landing web applications using modern semantic structures and scripts.</p>
+                    </div>
+                    <div class="achievement-card glass">
+                        <div class="ach-icon">👥</div>
+                        <h3>Project Team Leader</h3>
+                        <p>Managed project coordination and codebase assembly as Team Leader for our Fingerprint Based Voting System.</p>
+                    </div>
+                    <div class="achievement-card glass">
+                        <div class="ach-icon">⚡</div>
+                        <h3>AI & Automation Practice</h3>
+                        <p>Created automation scripts and structured reasoning agents using prompt sequences and Python scripts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Reach Out</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Details Card -->
+                    <div class="contact-details-card glass">
+                        <h3>Let's build something together!</h3>
+                        <p class="contact-intro">
+                            If you have an internship opportunity, project idea, or just want to connect, feel free to drop a message.
+                        </p>
+
+                        <div class="details-list">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div class="detail-info">
+                                    <span class="detail-label">Email</span>
+                                    <a href="mailto:adhavanthavakumar@gmail.com" class="detail-value">adhavanthavakumar@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div class="detail-info">
+                                    <span class="detail-label">Phone</span>
+                                    <a href="tel:+919655253532" class="detail-value">+91 96552 53532</a>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div class="detail-info">
+                                    <span class="detail-label">Location</span>
+                                    <span class="detail-value">Thanjavur, Tamil Nadu, India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-socials">
+                            <a href="https://github.com/Adhavan-star" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/adhavan-thavakumar-9b2439342" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Card -->
+                    <div class="contact-form-card glass">
+                        <form id="contact-form" autocomplete="off">
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <input type="text" id="form-name" required placeholder=" ">
+                                    <label for="form-name">Your Name</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <input type="email" id="form-email" required placeholder=" ">
+                                    <label for="form-email">Email Address</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <input type="text" id="form-subject" required placeholder=" ">
+                                    <label for="form-subject">Subject</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <textarea id="form-message" required placeholder=" " rows="5"></textarea>
+                                    <label for="form-message">Your Message</label>
+                                    <span class="focus-border"></span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary form-submit-btn">
+                                <span>Send Message</span>
+                                <svg class="submit-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                <svg class="submit-spinner hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="6.34" y1="17.66" x2="9.17" y2="14.83"/><line x1="14.83" y1="9.17" x2="17.66" y2="6.34"/></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 Adhavan Thavakumar. All rights reserved.</p>
+            <p class="signature">Crafted with passion &amp; engineering depth</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
