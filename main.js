@@ -1,4 +1,25 @@
 /* ==========================================================================
+   FIREBASE INTEGRATION
+   ========================================================================== */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCibOZvdBc1Kx2ZV61MHLAqbj3BHbp4SkY",
+    authDomain: "portfolio-88828.firebaseapp.com",
+    projectId: "portfolio-88828",
+    storageBucket: "portfolio-88828.firebasestorage.app",
+    messagingSenderId: "619959117103",
+    appId: "1:619959117103:web:25e4b1426c96a79e7eadda"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const analytics = getAnalytics(app);
+
+/* ==========================================================================
    PARTICLES BACKGROUND CANVAS
    ========================================================================== */
 const canvas = document.getElementById('particles-canvas');
@@ -472,8 +493,15 @@ contactForm.addEventListener('submit', (e) => {
     const subjectVal = document.getElementById('form-subject').value;
     const messageVal = document.getElementById('form-message').value;
 
-    // Simulate backend communication delay
-    setTimeout(() => {
+    // Send to Firestore
+    addDoc(collection(db, "messages"), {
+        name: nameVal,
+        email: emailVal,
+        subject: subjectVal,
+        message: messageVal,
+        timestamp: serverTimestamp()
+    })
+    .then(() => {
         // Reset button states
         submitBtn.disabled = false;
         submitArrow.classList.remove('hidden');
@@ -489,7 +517,18 @@ contactForm.addEventListener('submit', (e) => {
         document.querySelectorAll('.input-group input, .input-group textarea').forEach(el => {
             el.blur();
         });
-    }, 1500);
+    })
+    .catch((error) => {
+        console.error("Error sending message to Firebase: ", error);
+        
+        // Reset button states
+        submitBtn.disabled = false;
+        submitArrow.classList.remove('hidden');
+        submitSpinner.classList.add('hidden');
+
+        // Create error toast
+        showToast("Oops! Something went wrong. Please try again later.");
+    });
 });
 
 function showToast(message) {
